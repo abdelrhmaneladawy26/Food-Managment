@@ -1,3 +1,7 @@
 export default function NotFound() {
-  return <div>NotFound</div>;
+  return (
+    <div>
+      <i className="fa-solid fa-house"></i>{" "}
+    </div>
+  );
 }

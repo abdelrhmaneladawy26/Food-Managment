@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.Auth-container {
+  background-image: url(assets/images/auth-bg.png);
+  background-position: center;
+  background-size: cover;
+}
+.bg-overlay {
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.62),
+    rgba(47, 140, 51, 0.63)
+  );
+}
