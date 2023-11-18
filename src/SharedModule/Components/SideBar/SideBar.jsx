@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import logo from "../../../assets/images/menu-logo.png";
 export default function SideBar() {
+  let navigate = useNavigate();
+  const logOut = () => {
+    localStorage.removeItem("adminToken");
+    navigate("/login");
+  };
   return (
     <div>
       <div className="menu">
@@ -30,6 +36,11 @@ export default function SideBar() {
               <i className="fa-regular fa-calendar-days"></i>
               <p>Categories</p>
             </a>
+          </li>
+          <li>
+            <button className="btn bg-danger text-white" onClick={logOut}>
+              LogOut
+            </button>
           </li>
         </ul>
       </div>

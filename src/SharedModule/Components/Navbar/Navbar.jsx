@@ -1,3 +1,4 @@
-export default function Navbar() {
-  return <div>Navbar</div>;
+export default function Navbar({ adminData }) {
+  console.log(adminData);
+  return <div></div>;
 }

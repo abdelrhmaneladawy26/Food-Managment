@@ -3,7 +3,7 @@ import SideBar from "../SideBar/SideBar";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 
-export default function MasterLayout() {
+export default function MasterLayout({ adminData }) {
   return (
     <>
       <div className="">
@@ -14,7 +14,7 @@ export default function MasterLayout() {
             </div>
           </div>
           <div className="col-md-10">
-            <Navbar />
+            <Navbar adminData={adminData} />
             <Header />
             <Outlet />
           </div>
