@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -61,6 +61,14 @@ export default function Login({ saveAdminData }) {
           )}
         </div>
         <div className="form-group my-3">
+          <div className=" d-flex my-3 justify-content-between align-content-center">
+            <Link to="/reset-pass-request" className="text-black">
+              Register Now ?
+            </Link>
+            <Link to="/reset-pass-request" className="text-success">
+              Forgot Password ?
+            </Link>
+          </div>
           <button className="btn btn-success w-100">Login</button>
         </div>
       </form>
