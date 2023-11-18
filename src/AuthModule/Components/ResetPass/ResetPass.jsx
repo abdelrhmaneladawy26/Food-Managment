@@ -15,11 +15,9 @@ export default function ResetPass() {
   const onSubmit = (data) => {
     axios
       .post("http://upskilling-egypt.com:3002/api/v1/Users/Reset", data)
-      .then((response) => {
+      .then(() => {
         navigate("/login");
-        setTimeout(() => {
-          toast.success(" Reset Password success");
-        }, 1000);
+        toast.success(" Reset Password success");
       })
       .catch((error) => {
         toast.error(error.response.data.message);
@@ -29,7 +27,7 @@ export default function ResetPass() {
     <div>
       <form className=" w-75 m-auto" onSubmit={handleSubmit(onSubmit)}>
         <h2> Reset Password</h2>
-        <p>Please Enter Your Otp or Check Your Inbox</p>
+        <p>Please Enter Your OTP or Check Your Inbox</p>
         <div className="form-group my-3">
           <input
             className="form-control"

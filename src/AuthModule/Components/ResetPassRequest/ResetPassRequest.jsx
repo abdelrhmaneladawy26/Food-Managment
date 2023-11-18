@@ -16,13 +16,11 @@ export default function ResetPassRequest() {
     axios
       .post("http://upskilling-egypt.com:3002/api/v1/Users/Reset/Request", data)
       .then((response) => {
-        setTimeout(() => {
-          toast.success("Send OTP success");
-        }, 2000);
+        toast.success("Send OTP success");
         navigate("/reset-pass");
       })
       .catch((error) => {
-        toast.error(error.response.data.message);
+        toast.error(error?.response?.data?.message || "Error sending OTP");
       });
   };
   return (
@@ -49,7 +47,6 @@ export default function ResetPassRequest() {
         </div>
         <button className="btn my-4 btn-success w-100">Send</button>
       </form>
-      <ToastContainer />
     </div>
   );
 }

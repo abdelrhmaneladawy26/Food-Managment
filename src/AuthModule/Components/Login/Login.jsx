@@ -18,7 +18,9 @@ export default function Login({ saveAdminData }) {
         localStorage.setItem("adminToken", response.data.token);
         navigate("/dashboard");
         saveAdminData();
-        toast.success("Login success");
+        setTimeout(() => {
+          toast.success("Login success");
+        });
       })
       .catch((err) => {
         console.log(err.response.data.message);
