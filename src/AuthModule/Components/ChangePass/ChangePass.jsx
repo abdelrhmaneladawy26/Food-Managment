@@ -39,7 +39,7 @@ export default function ChangePass({ handleClose }) {
           <input
             className="form-control"
             type="password"
-            placeholder="Old Password"
+            placeHolder="Old Password"
             {...register("oldPassword", {
               required: true,
             })}
@@ -53,7 +53,7 @@ export default function ChangePass({ handleClose }) {
           <input
             className="form-control"
             type="password"
-            placeholder="New Password"
+            placeHolder="New Password"
             {...register("newPassword", {
               required: true,
             })}
@@ -66,7 +66,7 @@ export default function ChangePass({ handleClose }) {
           <input
             className="form-control"
             type="password"
-            placeholder="Confirm New Password"
+            placeHolder="Confirm New Password"
             {...register("confirmNewPassword", {
               required: true,
             })}

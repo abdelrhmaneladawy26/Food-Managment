@@ -4,7 +4,7 @@ import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import ChangePass from "../../../AuthModule/Components/ForgetPass/ChangePass";
+import ChangePass from "../../../AuthModule/Components/ChangePass/ChangePass";
 
 export default function SideBar() {
   let [isCollapsed, setIsCollapsed] = useState(true);
@@ -71,7 +71,9 @@ export default function SideBar() {
               Change Password
             </MenuItem>
             <MenuItem
-              icon={<i className="fa-solid fa-arrow-right-from-bracket"></i>}
+              icon={
+                <i className="fa-solid fa-arrow-right-from-bracket text-danger"></i>
+              }
               onClick={logOut}
             >
               {" "}

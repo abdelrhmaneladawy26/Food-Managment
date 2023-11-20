@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import SideBar from "../SideBar/SideBar";
 import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
+import NavBar from "../Navbar/NavBar";
 
 export default function MasterLayout({ adminData }) {
   return (
@@ -14,7 +14,7 @@ export default function MasterLayout({ adminData }) {
             </div>
           </div>
           <div className="col-md-10">
-            <Navbar adminData={adminData} />
+            <NavBar adminData={adminData} />
             <Header />
             <Outlet />
           </div>

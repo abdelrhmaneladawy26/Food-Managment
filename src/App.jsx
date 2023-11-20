@@ -17,7 +17,7 @@ import ProtectedRoute from "./SharedModule/Components/ProtectedRoute/ProtectedRo
 import ResetPassRequest from "./AuthModule/Components/ResetPassRequest/ResetPassRequest";
 import ResetPass from "./AuthModule/Components/ResetPass/ResetPass";
 import { ToastContainer } from "react-toastify";
-import ChangePass from "./AuthModule/Components/ForgetPass/ChangePass";
+import ChangePass from "./AuthModule/Components/ChangePass/ChangePass";
 
 function App() {
   const [adminData, setAdminData] = useState(null);
