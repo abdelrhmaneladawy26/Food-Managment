@@ -16,7 +16,7 @@ export default function ResetPassRequest() {
     axios
       .post("http://upskilling-egypt.com:3002/api/v1/Users/Reset/Request", data)
       .then((response) => {
-        toast.success("Send OTP success");
+        toast.success("Mail sent  successfully");
         navigate("/reset-pass");
       })
       .catch((error) => {

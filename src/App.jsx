@@ -11,13 +11,13 @@ import RecipesList from "./RecipesModule/Components/RecipesList/RecipesList";
 import CategoriesList from "./CategoriesModule/Components/CategoriesList/CategoriesList";
 import AuthLayout from "./SharedModule/Components/AuthLayout/AuthLayout";
 import Login from "./AuthModule/Components/Login/Login";
-import ForgetPass from "./AuthModule/Components/ForgetPass/ForgetPass";
 import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import ProtectedRoute from "./SharedModule/Components/ProtectedRoute/ProtectedRoute";
 import ResetPassRequest from "./AuthModule/Components/ResetPassRequest/ResetPassRequest";
 import ResetPass from "./AuthModule/Components/ResetPass/ResetPass";
 import { ToastContainer } from "react-toastify";
+import ChangePass from "./AuthModule/Components/ForgetPass/ChangePass";
 
 function App() {
   const [adminData, setAdminData] = useState(null);
@@ -54,7 +54,7 @@ function App() {
       children: [
         { index: true, element: <Login saveAdminData={saveAdminData} /> },
         { path: "login", element: <Login saveAdminData={saveAdminData} /> },
-        { path: "forgetPassword", element: <ForgetPass /> },
+        { path: "ChangePass", element: <ChangePass /> },
         { path: "reset-pass-request", element: <ResetPassRequest /> },
         { path: "reset-pass", element: <ResetPass /> },
       ],

@@ -1,48 +1,84 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../../assets/images/menu-logo.png";
+import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import ChangePass from "../../../AuthModule/Components/ForgetPass/ChangePass";
+
 export default function SideBar() {
+  let [isCollapsed, setIsCollapsed] = useState(true);
   let navigate = useNavigate();
   const logOut = () => {
     localStorage.removeItem("adminToken");
     navigate("/login");
   };
+  const handleToggle = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+  // Modal handler
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div>
-      <div className="menu">
-        <ul>
-          <div className="logo-box">
-            <img src={logo} alt="logo" />
-          </div>
-          <li>
-            <a>
-              <i className="fa-solid fa-house"></i>
-              <p>Home</p>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i className="fas fa-user-group"></i>
-              <p>Users</p>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i className="fa-solid fa-table-list"></i>
-              <p>Recipes</p>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i className="fa-regular fa-calendar-days"></i>
-              <p>Categories</p>
-            </a>
-          </li>
-          <li>
-            <button className="btn bg-danger text-white" onClick={logOut}>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Body>
+          <ChangePass handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
+
+      <div className="sidebar-container">
+        <Sidebar collapsed={isCollapsed}>
+          <Menu>
+            <li className="" onClick={handleToggle}>
+              <img className="w-100 my-4" src={logo} alt="logo" />
+            </li>
+            <MenuItem
+              icon={<i className="fa fa-home"></i>}
+              component={<Link to="/dashboard" />}
+            >
+              {" "}
+              Home
+            </MenuItem>
+            <MenuItem
+              icon={<i className="fa-solid fa-users"></i>}
+              component={<Link to="/dashboard/users" />}
+            >
+              Users
+            </MenuItem>
+            <MenuItem
+              icon={<i className="fa-solid fa-table-list"></i>}
+              component={<Link to="/dashboard/recipes" />}
+            >
+              {" "}
+              Recipes
+            </MenuItem>
+            <MenuItem
+              icon={<i className="fa-solid fa-table-list"></i>}
+              component={<Link to="/dashboard/categories" />}
+            >
+              {" "}
+              Categories
+            </MenuItem>
+            <MenuItem
+              icon={<i className="fa-solid fa-unlock"></i>}
+              title="Change Password"
+              onClick={handleShow}
+            >
+              {" "}
+              Change Password
+            </MenuItem>
+            <MenuItem
+              icon={<i className="fa-solid fa-arrow-right-from-bracket"></i>}
+              onClick={logOut}
+            >
+              {" "}
               LogOut
-            </button>
-          </li>
-        </ul>
+            </MenuItem>
+          </Menu>
+        </Sidebar>
       </div>
     </div>
   );

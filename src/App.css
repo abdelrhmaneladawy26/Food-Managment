@@ -23,3 +23,16 @@ li {
     rgba(47, 140, 51, 0.63)
   );
 }
+/* Sidebar  */
+.sidebar-container .ps-sidebar-container {
+  background-color: #1f263e;
+  border-radius: 0px 58px 0px 0px;
+  color: #fff;
+  height: 100vh;
+}
+.ps-sidebar-root {
+  border: none !important;
+}
+.sidebar-container .ps-sidebar-container .ps-menu-button:hover {
+  background-color: #0092471a;
+}

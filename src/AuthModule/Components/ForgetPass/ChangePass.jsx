@@ -1,11 +1,9 @@
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ForgetPass() {
-  const navigate = useNavigate();
+export default function ChangePass({ handleClose }) {
   const {
     register,
     handleSubmit,
@@ -23,8 +21,7 @@ export default function ForgetPass() {
         }
       )
       .then((response) => {
-        console.log(response);
-        navigate("/login");
+        handleClose();
       })
       .catch((error) => {
         toast.error(error.response.data.message);
