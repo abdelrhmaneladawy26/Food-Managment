@@ -36,3 +36,9 @@ li {
 .sidebar-container .ps-sidebar-container .ps-menu-button:hover {
   background-color: #0092471a;
 }
+/* Header */
+.header-content {
+  background-image: url("assets/images/Rectangle.png");
+  background-size: cover;
+  padding: 0 20px;
+}
