@@ -7,7 +7,6 @@ export default function RecipesList() {
       <Header
         title="Recipes, "
         description="You can now add your items that any user can order it from the
-        <br />
         Application and you can edit "
         name="Items"
         imgHader={imgHader}

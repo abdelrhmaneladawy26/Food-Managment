@@ -7,7 +7,6 @@ export default function UsersList() {
       <Header
         title="Users, "
         description="This is a welcoming screen for the entry of the application ,
-        <br />
         you can now see the options "
         name="List"
         imgHader={imgHader}

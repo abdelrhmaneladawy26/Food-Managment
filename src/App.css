@@ -42,3 +42,8 @@ li {
   background-size: cover;
   padding: 0 20px;
 }
+/* Home */
+.home {
+  background-color: #f0ffef;
+  padding: 0 20px;
+}

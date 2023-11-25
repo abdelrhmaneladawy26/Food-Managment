@@ -1,4 +1,10 @@
-export default function Header({ children, title, imgHader, name }) {
+export default function Header({
+  children,
+  title,
+  description,
+  imgHader,
+  name,
+}) {
   return (
     <>
       <div>{children}</div>
@@ -7,12 +13,10 @@ export default function Header({ children, title, imgHader, name }) {
           <div className="row align-items-center px-4 ">
             <div className="col-sm-10">
               <h3>
-                {title}<span>{name}</span>!
+                {title}
+                <span>{name}</span>!
               </h3>
-              <p>
-                You can now add your items that any user can order it from
-                <br /> the Application and you can edit
-              </p>
+              <p>{description}</p>
             </div>
             <div className="col-sm-2 py-3">
               <img className="w-100 " src={imgHader} alt="imgHader" />
