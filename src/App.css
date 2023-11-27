@@ -47,3 +47,8 @@ li {
   background-color: #f0ffef;
   padding: 0 20px;
 }
+
+/* Category */
+table tr th {
+  background-color: #e2e5eb !important;
+}

@@ -1,5 +1,5 @@
-import Header from "../../../SharedModule/Components/Header/Header";
 import imgHader from "../../../assets/images/eating vegan food-rafiki.png";
+import Header from "../../../SharedModule/Components/Header/Header";
 
 export default function Home({ name }) {
   return (
