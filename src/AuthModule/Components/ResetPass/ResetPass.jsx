@@ -14,7 +14,7 @@ export default function ResetPass() {
   } = useForm();
   const onSubmit = (data) => {
     axios
-      .post("http://upskilling-egypt.com:3002/api/v1/Users/Reset", data)
+      .post("https://upskilling-egypt.com/api/v1/Users/Reset", data)
       .then(() => {
         navigate("/login");
         toast.success(" Reset Password success");

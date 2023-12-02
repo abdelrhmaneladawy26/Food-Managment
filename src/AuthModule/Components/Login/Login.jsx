@@ -13,7 +13,7 @@ export default function Login({ saveAdminData }) {
   } = useForm();
   const onSubmit = async (data) => {
     await axios
-      .post("http://upskilling-egypt.com:3002/api/v1/Users/Login", data)
+      .post("https://upskilling-egypt.com/api/v1/Users/Login", data)
       .then((response) => {
         localStorage.setItem("adminToken", response.data.token);
         navigate("/dashboard");

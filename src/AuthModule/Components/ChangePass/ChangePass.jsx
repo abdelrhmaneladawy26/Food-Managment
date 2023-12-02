@@ -11,15 +11,11 @@ export default function ChangePass({ handleClose }) {
   } = useForm();
   const onSubmit = (data) => {
     axios
-      .put(
-        "http://upskilling-egypt.com:3002/api/v1/Users/ChangePassword",
-        data,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
-          },
-        }
-      )
+      .put("https://upskilling-egypt.com/api/v1/Users/ChangePassword", data, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("adminToken")}`,
+        },
+      })
       .then((response) => {
         handleClose();
       })
