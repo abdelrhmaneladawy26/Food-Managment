@@ -55,7 +55,6 @@ export default function CategoriesList() {
         toast.error(error.response.data.message);
       });
   };
-  const handleClose = () => setShow(false);
   const handleShow = () => setModalState("close");
   // const [show, setShow] = useState(false);
   const [ModalState, setModalState] = useState("close");
