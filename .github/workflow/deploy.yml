@@ -1,29 +1,51 @@
-# documentation: https://help.github.com/en/articles/workflow-syntax-for-github-actions
-name: deploy tutorial (only on push to main branch)
+name: Deploy
+
 on:
   push:
-    branches: main
+    branches:
+      - main
+
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
+
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node
+        uses: actions/setup-node@v1
         with:
-          fetch-depth: 0
+          node-version: 16
 
-      - name: set up Python
-        uses: actions/setup-python@v4
+      - name: Install dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Build project
+        run: npm run build
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
         with:
-          python-version: 3.8
+          name: production-files
+          path: ./dist
 
-      - name: install mkdocs
-        run: |
-          pip install mkdocs mkdocs-material mkdocs-redirects mkdocs-git-revision-date-localized-plugin
-          mkdocs --version
+  deploy:
+    name: Deploy
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-      - name: build tutorial
-        run: mkdocs build --strict
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
 
-      - name: deploy docs
-        run: mkdocs gh-deploy --force
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
