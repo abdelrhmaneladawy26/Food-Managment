@@ -2,7 +2,7 @@
   "name": "food-app",
   "private": false,
   "version": "0.0.0",
-  "homepage": "https://github.com/abdelrhmaneladawy26/Food-Managment/settings/pages",
+  "homepage": "./",
   "type": "module",
   "scripts": {
     "dev": "vite",
